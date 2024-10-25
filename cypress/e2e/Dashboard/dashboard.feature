@@ -60,3 +60,17 @@ Feature: Dashboard Feature
         When I Select Status Disabled
         Then I Click Button Search
         Then I Verify Tabel Data
+    Scenario: Deleted User
+        Given I Visit URL Halaman Login
+        When I should see Homepage
+        When I Submit Username
+        When I Submit Password
+        Then I Click Button Login
+        Then I Verify Login Success
+        Then I Click Admin Page
+        Then I Verify Admin Page
+        And I Verify Data Tengah
+        When I Click Reset Button
+        When I Search Username "poetri"
+        Then I Delete poetri
+        When I Click Reset Button

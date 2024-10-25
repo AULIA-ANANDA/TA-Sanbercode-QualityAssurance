@@ -39,4 +39,24 @@ export default class halamanDashboard {
         cy.get('[class="oxd-select-text-input"]').eq(1).click();
         cy.get(".oxd-select-dropdown").children().eq(1).click();
     }
+    static dataCenter() {
+        cy.get(".oxd-table-row").eq(3).children().eq(1);
+        cy.get(".oxd-table-row").eq(3).children().eq(2);
+        cy.get(".oxd-table-row").eq(3).children().eq(3);
+        cy.get(".oxd-table-row")
+          .eq(3)
+          .children()
+          .eq(4)
+          .should("have.text", "Enabled");
+        cy.get(".oxd-table-row").eq(3).should("be.visible");
+    }
+    static resetButton() {
+        return cy.get('button[type="button"]').eq(4).click();
+    }
+    static deleteData() {
+        cy.get('button[class="oxd-icon-button oxd-table-cell-action-space"]').eq(0).click();
+    }
+    static buttonYes() {
+        cy.get('button[class="oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin"]').click();
+    }
 }

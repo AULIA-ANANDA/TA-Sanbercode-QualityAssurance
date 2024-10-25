@@ -58,3 +58,21 @@ Then('I Click Button Search', () => {
 Then ('I Verify Tabel Data', () => {
     halamanDashboard.dataAdmin().should('be.visible')
 })
+
+//DELETE DATA
+When("I Search Username {string}", (username) => {
+    halamanDashboard.inputUsernameSearch().type(username);
+    halamanDashboard.buttonSearch();
+});
+When("I Verify Data Tengah", () => {
+    halamanDashboard.dataCenter();
+    cy.wait(10000);
+});
+When("I Delete poetri", () => {
+    halamanDashboard.deleteData();
+    cy.wait(10000)
+    halamanDashboard.buttonYes();
+});
+When("I Click Reset Button", () => {
+    halamanDashboard.resetButton();
+  });
