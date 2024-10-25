@@ -13,7 +13,7 @@
     "cypress": "^13.15.0"
   },
   "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/e2e/Login/",
+    "step_definitions": "cypress/e2e/",
     "nonGlobalStepDefinitions": false
   },
   "dependencies": {
